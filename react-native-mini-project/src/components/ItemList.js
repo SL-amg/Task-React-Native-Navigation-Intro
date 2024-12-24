@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { ScrollView } from "react-native";
 
 const ItemList = () => {
   const navigation = useNavigation();
@@ -69,7 +70,12 @@ const ItemList = () => {
     <View>
       <Text>This is a page of one item detail</Text>
       <Text>List of items</Text>
+      <ScrollView
+      horizontal= {true}
+      >
       {itemListView}
+        
+        </ScrollView> 
     </View>
   );
 };
