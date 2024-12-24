@@ -1,13 +1,19 @@
-
-import { Button, StyleSheet, Text, View, TextInput, SearchBar } from "react-native";
+import {
+  Button,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  SearchBar,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-
 const HomeComponent = () => {
-
-const [inputValue, setInputValue] = useState("");
-const navigation = useNavigation();
+  const [inputValue, setInputValue] = useState("");
+  const navigation = useNavigation();
 
   return (
     <View>
@@ -19,36 +25,42 @@ const navigation = useNavigation();
         placeholder="Search"
       />
       <Text>You typed: {inputValue}</Text>
-     <View style={styles.buttonView}>
-     <Button 
-     style={styles.buttonStyle}
+      <View style={styles.buttonView}>
+        <Button
+          style={styles.buttonStyle}
           title="All"
           onPress={() => alert("Button clicked!")} // Alert on button press
         />
-           <Button
+        <Button
           title="Tech"
           onPress={() => alert("Button clicked!")} // Alert on button press
         />
-           <Button
+        <Button
           title="House"
           onPress={() => alert("Button clicked!")} // Alert on button press
         />
-           <Button
+        <Button
           title="Clothing"
           onPress={() => alert("Button clicked!")} // Alert on button press
         />
       </View>
 
+      <TouchableOpacity onPress={() => navigation.navigate("Item List")}>
+        <Image
+          source={{
+            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_8vWudlY8BVzgLbMW4ZgbMsfRb8xX76GATw&s",
+          }}
+          style={{ width: 200, height: 100, objectFit: "contain" }}
+        />
+      </TouchableOpacity>
+
       <Button
         title="Go to item List"
         onPress={() => navigation.navigate("Item List")}
       />
-
-
-     
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -62,17 +74,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
-  buttonView:{
+  buttonView: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },
-  buttonStyle:{
-    alignItems: 'center',
-    backgroundColor: '#EAB68F',
+  buttonStyle: {
+    alignItems: "center",
+    backgroundColor: "#EAB68F",
     borderRadius: 5,
     marginHorizontal: 10,
-    padding: 15
-  }
+    padding: 15,
+  },
 });
-export default HomeComponent
+export default HomeComponent;
