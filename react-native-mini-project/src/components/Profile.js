@@ -76,7 +76,7 @@ const Profile = () => {
         />
 <Button
           title="Edit Profile"
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("EditProfile")}
         />
 
       </View>

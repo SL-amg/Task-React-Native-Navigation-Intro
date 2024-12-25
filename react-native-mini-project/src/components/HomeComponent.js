@@ -61,7 +61,7 @@ const HomeComponent = () => {
 
           <Button
           title="Go to Test page to Create Item"
-          onPress={() => navigation.navigate("Create Item")}
+          onPress={() => navigation.navigate("CreateItem")}
         />
 
 <Button
