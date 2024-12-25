@@ -58,6 +58,16 @@ const HomeComponent = () => {
         title="Go to item List"
         onPress={() => navigation.navigate("Item List")}
       />
+
+          <Button
+          title="Go to Test page to Create Item"
+          onPress={() => navigation.navigate("Create Item")}
+        />
+
+<Button
+          title="Go to Test page Profile"
+          onPress={() => navigation.navigate("Profile")}
+        />
     </View>
   );
 };
